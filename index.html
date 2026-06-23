@@ -42,22 +42,16 @@
 }
 
 .research-media-column {
-  width: 36%;
-  min-width: 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  width: 30%;
+  min-width: 220px;
+  max-width: 260px;
 }
 
 .research-media-column img,
 .research-media-column video {
-  width: 100%;
-  border-radius: 12px;
-  display: block;
-  object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  max-height: 160px;
+  object-fit: contain;
 }
-
 .research-media-caption {
   font-size: 13px;
   color: #666;
@@ -497,7 +491,7 @@
            <td style="padding:16px;width:100%;vertical-align:middle">
 
            <div class="research-card">
-           <div class="research-media">
+           <div class="research-media-column">
              <video autoplay muted loop playsinline poster="images/magprint.jpg">
                <source src="videos/magprint.mp4" type="video/mp4">
                Your browser does not support the video tag.
@@ -526,7 +520,7 @@
         </div>
              
            <div class="research-card">
-           <div class="research-media">
+           <div class="research-media-column">
              <video autoplay muted loop playsinline poster="images/thermal.png">
                <source src="images/thermal.png" type="video/mp4">
                Your browser does not support the video tag.
@@ -562,7 +556,7 @@
 
 
            <div class="research-card">
-           <div class="research-media">
+           <div class="research-media-column">
              <video autoplay muted loop playsinline poster="images/magprint.jpg">
                <source src="videos/magprint.mp4" type="video/mp4">
                Your browser does not support the video tag.
@@ -595,7 +589,7 @@
                 which laid the foundation for my current research in magnetic microrobotics and biomedical robotic systems.
                     </p>
            <div class="research-card">
-           <div class="research-media">
+           <div class="research-media-column">
              <video autoplay muted loop playsinline poster="images/sensor-based.png">
                <source src="videos/sensor-based.png" type="video/mp4">
                Your browser does not support the video tag.
@@ -626,7 +620,7 @@
 
              
            <div class="research-card">
-           <div class="research-media">
+           <div class="research-media-column">
              <video autoplay muted loop playsinline poster="images/drones.gif">
                <source src="images/drones.gif" type="video/mp4">
                Your browser does not support the video tag.
