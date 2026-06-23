@@ -140,45 +140,95 @@
   }
 }
 
-           /* ===== Moments / travel photo section ===== */
-      .moments-intro {
-        margin-top: 0;
-        color: #555;
-      }
+/* ===== Moments auto-scrolling photo row with captions ===== */
+.moments-section {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 16px;
+  position: relative;
+}
 
-      .moments-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-        margin-top: 16px;
-      }
+.moments-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  animation: scrollMoments 45s linear infinite;
+}
 
-      .moment-card {
-        position: relative;
-        overflow: hidden;
-        border-radius: 12px;
-        background: #f6f6f6;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-      }
+.moments-section:hover .moments-track {
+  animation-play-state: paused;
+}
 
-      .moment-card img {
-        width: 100%;
-        height: 170px;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.25s ease;
-      }
+.moment-card {
+  flex: 0 0 auto;
+  width: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
 
-      .moment-card:hover img {
-        transform: scale(1.04);
-      }
+.moment-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
 
-      .moment-caption {
-        padding: 8px 10px 10px 10px;
-        font-size: 13px;
-        color: #555;
-        background: #fff;
-      }
+.moment-caption {
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+  padding: 8px 10px 10px 10px;
+  background: #fff;
+}
+
+/* Fade effect on left and right edges */
+.moments-section::before,
+.moments-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.moments-section::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.moments-section::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+/* Rolling direction: right to left */
+@keyframes scrollMoments {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .moment-card {
+    width: 180px;
+  }
+
+  .moment-card img {
+    height: 125px;
+  }
+
+  .moments-track {
+    gap: 12px;
+    animation-duration: 35s;
+  }
+}
 /* Side navigation bar */
 .side-nav {
   position: fixed;
@@ -950,52 +1000,24 @@
             </tbody>
           </table>
 
-            <table id="moments" class="section-anchor" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:20px;width:100%;vertical-align:middle">
-                    <h2>Moments</h2>
-                    <p class="moments-intro">
-                      Outside the lab, I enjoy traveling, exploring new places, and capturing moments from daily life.
-                    </p>
+         <table id="moments" class="section-anchor" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+  <tbody>
+    <tr>
+      <td style="padding:20px;width:100%;vertical-align:middle">
+        <h2>Moments</h2>
+        <p>
+          Outside the lab, I enjoy traveling, exploring new places, and capturing moments from daily life.
+        </p>
 
-                    <div class="moments-grid">
+        <div class="moments-section">
+          <div class="moments-track" id="moments-track">
+          </div>
+        </div>
 
-                      <div class="moment-card">
-                        <img src="images/travel_1.jpg" alt="Travel moment 1">
-                        <div class="moment-caption">Travel moment</div>
-                      </div>
-
-                      <div class="moment-card">
-                        <img src="images/travel_2.jpg" alt="Travel moment 2">
-                        <div class="moment-caption">Weekend exploration</div>
-                      </div>
-
-                      <div class="moment-card">
-                        <img src="images/travel_3.jpg" alt="Travel moment 3">
-                        <div class="moment-caption">A favorite view</div>
-                      </div>
-
-                      <div class="moment-card">
-                        <img src="images/travel_4.jpg" alt="Travel moment 4">
-                        <div class="moment-caption">On the road</div>
-                      </div>
-
-                      <div class="moment-card">
-                        <img src="images/travel_5.jpg" alt="Travel moment 5">
-                        <div class="moment-caption">City walk</div>
-                      </div>
-
-                      <div class="moment-card">
-                        <img src="images/travel_6.jpg" alt="Travel moment 6">
-                        <div class="moment-caption">Nature and landscape</div>
-                      </div>
-
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
             <!-- Footer -->
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
@@ -1050,6 +1072,61 @@
   window.addEventListener("scroll", updateActiveNav);
   window.addEventListener("load", updateActiveNav);
   window.addEventListener("resize", updateActiveNav);
+</script>
+    <script>
+  const moments = [
+    {
+      src: "images/moments/moment_1.jpg",
+      caption: "Glacier National Park"
+    },
+    {
+      src: "images/moments/moment_2.jpg",
+      caption: "Seattle"
+    },
+    {
+      src: "images/moments/moment_3.jpg",
+      caption: "Chicago"
+    },
+    {
+      src: "images/moments/moment_4.jpg",
+      caption: "Lake Michigan"
+    },
+    {
+      src: "images/moments/moment_5.jpg",
+      caption: "Road trip"
+    },
+    {
+      src: "images/moments/moment_6.jpg",
+      caption: "Nature and landscape"
+    },
+    {
+      src: "images/moments/moment_7.jpg",
+      caption: "City walk"
+    },
+    {
+      src: "images/moments/moment_8.jpg",
+      caption: "Weekend memory"
+    }
+  ];
+
+  const track = document.getElementById("moments-track");
+
+  function createMomentCard(moment) {
+    const card = document.createElement("div");
+    card.className = "moment-card";
+
+    card.innerHTML = `
+      <img src="${moment.src}" alt="${moment.caption}">
+      <div class="moment-caption">${moment.caption}</div>
+    `;
+
+    return card;
+  }
+
+  /* Add photos twice for seamless infinite scrolling */
+  moments.concat(moments).forEach(moment => {
+    track.appendChild(createMomentCard(moment));
+  });
 </script>
   </body>
 </html>
