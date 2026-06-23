@@ -33,6 +33,81 @@
 .section-anchor {
   scroll-margin-top: 30px;
 }
+      /* ===== Research project cards ===== */
+.research-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  margin: 26px 0 38px 0;
+}
+
+.research-media {
+  width: 36%;
+  min-width: 260px;
+}
+
+.research-media video,
+.research-media img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.research-content {
+  flex: 1;
+}
+
+.research-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #10215c;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.research-authors {
+  font-size: 15px;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.research-venue {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.research-description {
+  font-size: 15px;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.research-links a {
+  margin-right: 8px;
+  color: #1772d0;
+  text-decoration: none;
+}
+
+.research-links a:hover {
+  color: #f09228;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 700px) {
+  .research-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .research-media {
+    width: 100%;
+    min-width: 100%;
+  }
+}
 
 /* Side navigation bar */
 .side-nav {
@@ -404,36 +479,47 @@
               </tbody>
             </table>
 
-            <!-- Publications / Projects -->
-            <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
+           <!-- Research Cards -->
+           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+           <tbody>
+           <tr>
+           <td style="padding:16px;width:100%;vertical-align:middle">
 
-                <!-- Project 1 -->
-                <tr>
-                  <td style="padding:16px;width:30%;vertical-align:middle">
-                    <img src="images/magprint.jpg" alt="MagPrint embedded-magnet microrobots" class="project-img">
-                  </td>
-                  <td class="project-text" style="padding:8px 0 8px 48px;width:70%;vertical-align:middle">
-                    <a href="#">
-                      <span class="papertitle">Direct-Printed Embedded-Magnet Microrobots</span>
-                    </a>
-                    <br>
-                    <strong>Yang Yang</strong>, Jeremy Gan, Jialong Huang, and David J. Cappelleri
-                    <br>
-                    <em>Manuscript / Under Review</em>
-                    <br>
-                    <p></p>
-                    <p>
-                     
-                    </p>
-                  </td>
-                </tr>
+           <div class="research-card">
+           <div class="research-media">
+             <video autoplay muted loop playsinline poster="images/magprint.jpg">
+               <source src="videos/magprint.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+             </video>
+           </div>
 
-                     <p>
-                     Under Construction!
-                    </p>
-              </tbody>
-            </table>
+          <div class="research-content">
+            <div class="research-title">
+              Generalized Direct Fabrication of Embedded-Magnet Microrobots with Enhanced Material Compatibility
+            </div>
+
+            <div class="research-authors">
+              <strong>Yang Yang</strong>, Jeremy B Gan, Jialong Huang, Sven Mucke, Aaron C Davis, Haiyan Wang, David J Cappelleri
+            </div>
+
+            <div class="research-venue">
+              Manuscript under review
+            </div>
+
+            <div class="research-description">
+              This work is an extension of the "MagPrint" project. We present an improved direct-printing strategy that <strong>integrates permanent micro-magnets into microrobots during 
+              the two-photon polymerization (TPP) process</strong>strong>, thereby eliminating the need for post-assembly alignment or insertion. To enhance magnetic-material compatibility and 
+              interfacial reliability, <strong>a sputtering-based surface modification technique is introduced</strong>strong>, enabling robust integration of <strong>both pre-coated and surface-treated magnets</strong>.
+              Using this approach, four functional microrobotic platforms are demonstrated:(1) a helical microswimmer for efficient propulsion,(2) a micro-scale tumbling microrobot
+              for terrain locomotion,(3) a compliant micro-gripper for precise grasping and manipulation, and (4) a mini-MicroTumbler (MMT) incorporating a 
+              sputter-modified magnet for stable microscale actuation. 
+            </div>
+
+            <div class="research-links">
+              <a href="#">paper</a> /
+            </div>
+          </div>
+        </div>
 
 
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
