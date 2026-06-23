@@ -1,189 +1,464 @@
-<!DOCTYPE html>
+
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yang Yang</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #222;
-      background-color: #ffffff;
-    }
+    <title>Yang Yang</title>
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 5px;
-    }
+    <meta name="author" content="Yang Yang">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    h2 {
-      margin-top: 40px;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
+    <!-- Optional: keep these if you have the same folders/files in your GitHub repo -->
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
 
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1px solid #ddd;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      color: #555;
-    }
-
-    .links a {
-      margin-right: 15px;
-    }
-
-    .project {
-      margin-bottom: 25px;
-    }
-
-    .footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #777;
-    }
-
-    @media screen and (max-width: 700px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.55;
+        color: #222;
+        background-color: #fff;
       }
 
-      .profile-img {
-        width: 150px;
-        height: 150px;
+      a {
+        color: #1772d0;
+        text-decoration: none;
       }
-    }
-  </style>
-</head>
 
-<body>
+      a:hover {
+        color: #f09228;
+        text-decoration: underline;
+      }
 
-  <div class="header">
-    <img src="assets/profile.jpg" alt="Yang Yang" class="profile-img">
+      .name {
+        font-size: 34px;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
 
-    <div>
-      <h1>Yang Yang</h1>
-      <p class="subtitle">
-        Ph.D. Student in Mechanical Engineering<br>
-        Purdue University
-      </p>
+      .papertitle {
+        font-weight: 700;
+        font-size: 17px;
+      }
 
-      <p class="links">
-        <a href="mailto:yyanghelen27@gmail.com">Email</a>
-        <a href="#">Google Scholar</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">CV</a>
-      </p>
-    </div>
-  </div>
+      h2 {
+        font-size: 22px;
+        font-weight: 500;
+        margin-top: 0;
+      }
 
-  <h2>About Me</h2>
-  <p>
-    I am a Ph.D. student in the School of Mechanical Engineering at Purdue University,
-    working on magnetic microrobots, two-photon polymerization, ultrasound-guided robotic
-    systems, and biomedical applications.
-  </p>
+      .profile-photo {
+        width: 65%;
+        max-width: 220px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
 
-  <p>
-    My research focuses on developing magnetically actuated microrobots and image-guided
-    robotic systems for minimally invasive diagnosis and therapy.
-  </p>
+      .icon-link {
+        margin: 0 10px;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;
+      }
 
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Magnetic microrobotics</li>
-    <li>Two-photon polymerization microfabrication</li>
-    <li>Embedded-magnet microrobots</li>
-    <li>Medical robotics</li>
-    <li>Ultrasound-guided magnetic navigation</li>
-    <li>Targeted drug delivery</li>
-  </ul>
+      .icon-link img {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+      }
 
-  <h2>Research Projects</h2>
+      .icon-link span {
+        font-size: 13px;
+        color: #333;
+      }
 
-  <div class="project">
-    <h3>Direct-Printed Embedded-Magnet Microrobots</h3>
-    <p>
-      This project develops a direct-printing strategy for integrating permanent micro-magnets
-      into two-photon polymerized microrobots. The approach enables magnetic microswimmers,
-      tumblers, and grippers with embedded magnetic components.
-    </p>
-  </div>
+      .project-img {
+        width: 120%;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto;
+      }
 
-  <div class="project">
-    <h3>Hyper-Redundant Magnetic Snake Microrobots</h3>
-    <p>
-      This project explores modular snake-like microrobots for navigation in constrained
-      biological environments. The design combines magnetic actuation with flexible or
-      articulated microstructures.
-    </p>
-  </div>
+      .colored-box {
+        border-radius: 8px;
+        padding: 8px;
+      }
 
-  <div class="project">
-    <h3>Ultrasound-Guided Magnetic Navigation</h3>
-    <p>
-      This project focuses on robotic and ultrasound-guided navigation of magnetic microrobots
-      for biomedical intervention and real-time tracking.
-    </p>
-  </div>
+      .highlight {
+        color: #C28E0E;
+      }
 
-  <h2>Publications</h2>
+      @media screen and (max-width: 700px) {
+        .main-table {
+          width: 100% !important;
+        }
 
-  <p>
-    <strong>Yang Yang</strong>, L. Tan, L. Fang, and D. J. Cappelleri,
-    “Shape-Programmable Adaptive Multi-Material Microswimmers for Biomedical Applications,”
-    <em>Advanced Functional Materials</em>, 2024.
-  </p>
+        .profile-photo {
+          width: 55%;
+          margin-top: 20px;
+        }
 
-  <p>
-    <strong>Yang Yang</strong> et al.,
-    “Sensor-based planning and control for conformal deposition on a deformable surface
-    using an articulated industrial robot,”
-    <em>Journal of Manufacturing Science and Engineering</em>, 2024.
-  </p>
+        .project-img {
+          width: 100%;
+        }
 
-  <h2>Education</h2>
-  <p>
-    <strong>Purdue University</strong><br>
-    Ph.D. Student, Mechanical Engineering
-  </p>
+        td {
+          display: block;
+          width: 100% !important;
+          box-sizing: border-box;
+        }
 
-  <h2>Contact</h2>
-  <p>
-    Email: <a href="mailto:yyanghelen27@gmail.com">yyanghelen27@gmail.com</a>
-  </p>
+        .project-text {
+          padding-left: 16px !important;
+        }
+      }
+    </style>
+  </head>
 
-  <div class="footer">
-    Last updated: 2026
-  </div>
+  <body>
+    <table class="main-table" style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr style="padding:0px">
+          <td style="padding:0px">
 
-</body>
+            <!-- Header / About -->
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr style="padding:0px">
+                  <td style="padding:2.5%;width:63%;vertical-align:middle">
+                    <p class="name" style="text-align:center;">
+                      Yang Yang
+                    </p>
+
+                    <p>
+                      I am a Ph.D. student in the
+                      <a href="https://engineering.purdue.edu/ME" target="_blank">School of Mechanical Engineering</a>
+                      at <a href="https://www.purdue.edu/" target="_blank">Purdue University</a>,
+                      working in the
+                      <a href="https://engineering.purdue.edu/MSRAL" target="_blank">Multi-Scale Robotics and Automation Lab</a>
+                      under the supervision of Prof.
+                      <a href="https://engineering.purdue.edu/ME/People/ptProfile?id=12124" target="_blank">David J. Cappelleri</a>.
+                    </p>
+
+                    <p>
+                      My research focuses on magnetically actuated microrobots, two-photon polymerization
+                      microfabrication, embedded-magnet microrobotic systems, ultrasound-guided magnetic
+                      navigation, and biomedical applications such as targeted drug delivery and minimally
+                      invasive intervention.
+                    </p>
+
+                    <p>
+                      I am broadly interested in micro/nanorobotics, medical robotics, additive manufacturing,
+                      image-guided intervention, and translational robotic systems for healthcare.
+                    </p>
+
+                    <p style="text-align:center">
+                      <a href="mailto:yyanghelen27@gmail.com" title="Email" class="icon-link">
+                        <img src="images/email_icon.png" alt="Email"><br>
+                        <span>email</span>
+                      </a>
+
+                      <!-- Replace # with your real Google Scholar link -->
+                      <a href="#" title="Google Scholar" class="icon-link">
+                        <img src="images/scholar_icon.png" alt="Google Scholar"><br>
+                        <span>G. scholar</span>
+                      </a>
+
+                      <!-- Replace # with your real GitHub link -->
+                      <a href="https://github.com/yyanghelen27" title="Github" class="icon-link">
+                        <img src="images/github_icon.png" alt="Github"><br>
+                        <span>github</span>
+                      </a>
+
+                      <!-- Replace # with your real LinkedIn link -->
+                      <a href="#" title="LinkedIn" class="icon-link">
+                        <img src="images/linkedin_icon.png" alt="LinkedIn"><br>
+                        <span>linkedin</span>
+                      </a>
+
+                      <!-- Upload your CV to files/Yang_Yang_CV.pdf or change this path -->
+                      <a href="files/Yang_Yang_CV.pdf" title="CV" class="icon-link">
+                        <img src="images/cv_icon.png" alt="CV"><br>
+                        <span>CV</span>
+                      </a>
+                    </p>
+                  </td>
+
+                  <td style="padding:2.5%;width:37%;max-width:37%;text-align:center;">
+                    <!-- Rename your profile photo to images/Yang_Yang_profile.jpg -->
+                    <a href="images/Yang_Yang_profile.jpg">
+                      <img alt="profile photo" src="images/Yang_Yang_profile.jpg" class="profile-photo">
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Research Summary -->
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;width:100%;vertical-align:middle">
+                    <h2>Research during Ph.D.</h2>
+                    <p>
+                      My Ph.D. research focuses on
+                      <strong><span class="highlight">magnetic microrobotics</span></strong>,
+                      <strong><span class="highlight">two-photon polymerization</span></strong>,
+                      <strong><span class="highlight">embedded-magnet microfabrication</span></strong>,
+                      ultrasound-guided robotic navigation, and biomedical microrobot systems.
+                      My goal is to develop microrobots and robotic platforms that can navigate complex
+                      biological environments for minimally invasive diagnosis and therapy.
+                    </p>
+                    <p>
+                      <em>* indicates equal contribution when applicable.</em>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Publications / Projects -->
+            <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+
+                <!-- Project 1 -->
+                <tr>
+                  <td style="padding:16px;width:30%;vertical-align:middle">
+                    <img src="images/magprint.jpg" alt="MagPrint embedded-magnet microrobots" class="project-img">
+                  </td>
+                  <td class="project-text" style="padding:8px 0 8px 48px;width:70%;vertical-align:middle">
+                    <a href="#">
+                      <span class="papertitle">Direct-Printed Embedded-Magnet Microrobots</span>
+                    </a>
+                    <br>
+                    <strong>Yang Yang</strong>, Jeremy Gan, Jialong Huang, and David J. Cappelleri
+                    <br>
+                    <em>Manuscript / ongoing Ph.D. research</em>
+                    <br>
+                    <p></p>
+                    <p>
+                      Developed a direct two-photon polymerization strategy for integrating permanent
+                      micro-magnets into microrobots during fabrication. This approach enables multiple
+                      magnetic microrobot platforms, including helical microswimmers, tumblers, and
+                      grippers, while reducing post-print assembly complexity.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Project 2 -->
+                <tr>
+                  <td style="padding:16px;width:30%;vertical-align:middle">
+                    <img src="images/snake_microrobot.jpg" alt="Magnetic snake microrobot" class="project-img">
+                  </td>
+                  <td class="project-text" style="padding:8px 0 8px 48px;width:70%;vertical-align:middle">
+                    <a href="#">
+                      <span class="papertitle">Hyper-Redundant Magnetic Snake Microrobots for Constrained Navigation</span>
+                    </a>
+                    <br>
+                    <strong>Yang Yang</strong> and David J. Cappelleri
+                    <br>
+                    <em>Ongoing project</em>
+                    <br>
+                    <p></p>
+                    <p>
+                      Designed modular snake-like microrobots with embedded magnetic components and
+                      compliant or articulated joints. The project explores reconfigurable locomotion
+                      and magnetic actuation strategies for navigation through confined biological
+                      environments.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Project 3 -->
+                <tr>
+                  <td style="padding:16px;width:30%;vertical-align:middle">
+                    <img src="images/ultrasound_navigation.jpg" alt="Ultrasound-guided magnetic navigation" class="project-img">
+                  </td>
+                  <td class="project-text" style="padding:8px 0 8px 48px;width:70%;vertical-align:middle">
+                    <a href="#">
+                      <span class="papertitle">Ultrasound-Guided Magnetic Microrobot Navigation</span>
+                    </a>
+                    <br>
+                    <strong>Yang Yang</strong> and collaborators
+                    <br>
+                    <em>Ongoing project</em>
+                    <br>
+                    <p></p>
+                    <p>
+                      Developed robotic and imaging workflows for ultrasound-guided magnetic microrobot
+                      navigation. This work combines robotic positioning, external magnetic actuation,
+                      real-time ultrasound imaging, and path-planning concepts for biomedical intervention.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Publication 1 -->
+                <tr>
+                  <td style="padding:16px;width:30%;vertical-align:middle">
+                    <img src="images/adaptive_microswimmers.jpg" alt="Adaptive microswimmers" class="project-img">
+                  </td>
+                  <td class="project-text" style="padding:8px 0 8px 48px;width:70%;vertical-align:middle">
+                    <a href="#">
+                      <span class="papertitle">Shape-Programmable Adaptive Multi-Material Microswimmers for Biomedical Applications</span>
+                    </a>
+                    <br>
+                    L. Tan, <strong>Yang Yang</strong>, L. Fang, and D. J. Cappelleri
+                    <br>
+                    <em>Advanced Functional Materials</em>, 2024
+                    <br>
+                    <!-- Add DOI / paper link when ready -->
+                    <a href="#">paper</a>
+                    <p></p>
+                    <p>
+                      Developed adaptive multi-material microswimmers with programmable shape change
+                      for biomedical microrobotics applications.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Publication 2 -->
+                <tr>
+                  <td style="padding:16px;width:30%;vertical-align:middle">
+                    <img src="images/conformal_deposition.jpg" alt="Conformal deposition robotic planning" class="project-img">
+                  </td>
+                  <td class="project-text" style="padding:8px 0 8px 48px;width:70%;vertical-align:middle">
+                    <a href="#">
+                      <span class="papertitle">Sensor-Based Planning and Control for Conformal Deposition on a Deformable Surface Using an Articulated Industrial Robot</span>
+                    </a>
+                    <br>
+                    <strong>Yang Yang</strong> et al.
+                    <br>
+                    <em>Journal of Manufacturing Science and Engineering</em>, 2024
+                    <br>
+                    <!-- Add DOI / paper link when ready -->
+                    <a href="#">paper</a>
+                    <p></p>
+                    <p>
+                      Developed a sensor-based robotic planning and control framework for conformal
+                      deposition on deformable surfaces using an articulated industrial robot.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Publication 3 -->
+                <tr>
+                  <td style="padding:16px;width:30%;vertical-align:middle">
+                    <img src="images/hmmr_dp.jpg" alt="Helical multi-material microrobot with detachable payload" class="project-img">
+                  </td>
+                  <td class="project-text" style="padding:8px 0 8px 48px;width:70%;vertical-align:middle">
+                    <a href="#">
+                      <span class="papertitle">Design, Fabrication, and Characterization of a Helical Multi-Material Microrobot with a Detachable Payload</span>
+                    </a>
+                    <br>
+                    <strong>Yang Yang</strong> et al.
+                    <br>
+                    <em>MARSS</em>
+                    <br>
+                    <!-- Add conference/paper link when ready -->
+                    <a href="#">paper</a>
+                    <p></p>
+                    <p>
+                      Designed and fabricated a helical multi-material magnetic microrobot with a detachable
+                      payload mechanism for microrobotic biomedical delivery applications.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Publication 4 -->
+                <tr>
+                  <td style="padding:16px;width:30%;vertical-align:middle">
+                    <img src="images/thermal_microswimmers.jpg" alt="Thermal-responsive helical microswimmers" class="project-img">
+                  </td>
+                  <td class="project-text" style="padding:8px 0 8px 48px;width:70%;vertical-align:middle">
+                    <a href="#">
+                      <span class="papertitle">Two-Photon Polymerization 3D-Templated Thermal-Responsive Helical Adaptive Microswimmers</span>
+                    </a>
+                    <br>
+                    <strong>Yang Yang</strong> et al.
+                    <br>
+                    <em>Journal of Medical Robotics Research</em>, 2025
+                    <br>
+                    <!-- Add DOI / paper link when ready -->
+                    <a href="#">paper</a>
+                    <p></p>
+                    <p>
+                      Developed a two-photon polymerization templating strategy for fabricating
+                      thermally responsive helical adaptive microswimmers.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Co-authored / Other Research -->
+                <tr>
+                  <td colspan="2" style="padding:18px 16px 4px 16px;vertical-align:middle">
+                    <div style="border-top:1px solid #ddd;padding-top:16px;">
+                      <h2 style="margin:0;">Selected Experience</h2>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+                    <div class="colored-box" style="background-color:#EFE4B0;">
+                      <h2>Industry</h2>
+                    </div>
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:center">
+                    <strong>Engineering Intern</strong>, Cook Advanced Technologies, West Lafayette, IN.
+                    Worked on GI tract phantom development, prototype assembly, ultrasound imaging,
+                    3D reconstruction, automated path planning, and magnetic microrobot tracking.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+                    <div class="colored-box" style="background-color:#EFE4B0;">
+                      <h2>Research</h2>
+                    </div>
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:center">
+                    <strong>Student Research Assistant</strong>, USC Center for Advanced Manufacturing.
+                    Worked on sensor-based robotic planning and control for conformal deposition on
+                    deformable surfaces.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+                    <div class="colored-box" style="background-color:#EFE4B0;">
+                      <h2>News</h2>
+                    </div>
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:center">
+                    <ul>
+                      <li><strong>May 2026:</strong> Started Engineering Intern position at Cook Advanced Technologies.</li>
+                      <li><strong>April 2026:</strong> Passed Ph.D. preliminary exam at Purdue University.</li>
+                      <li><strong>2025:</strong> Presented microrobotics research at MARSS.</li>
+                    </ul>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <!-- Footer -->
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:0px">
+                    <br>
+                    <p style="text-align:right;font-size:small;">
+                      Website template adapted from a lightweight academic GitHub Pages layout.
+                      Last updated: 2026.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>
