@@ -41,18 +41,66 @@
         font-size: 17px;
       }
 
-      .exp-logo img {
-        width: 70px;
-        height: 70px;
-        object-fit: contain;
-      }
+      .experience-list {
+  margin-top: 10px;
+}
 
-      .exp-logo {
-        width: 90px;
-        min-width: 90px;
-        text-align: center;
-        vertical-align: middle;
-      }
+.exp-entry {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.exp-logo {
+  width: 100px;
+  min-width: 100px;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.exp-logo img {
+  max-width: 65px;
+  max-height: 55px;
+  object-fit: contain;
+}
+
+.exp-content {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.exp-header {
+  margin-bottom: 2px;
+}
+
+.exp-company a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+.exp-company a:hover {
+  text-decoration: underline;
+}
+
+.exp-date {
+  color: #222;
+  margin-left: 4px;
+}
+
+.exp-role,
+.exp-detail {
+  margin-top: 2px;
+}
+
+.exp-detail a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+.exp-detail a:hover {
+  text-decoration: underline;
+}
 
       h2 {
         font-size: 22px;
@@ -402,46 +450,76 @@
               </tbody>
             </table>
 
+
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Experience</h2>
-                  <div class="experience-list">
-                    <div class="exp-entry">
-                      <div class="exp-logo">
-                        <a href="https://www.cookmedical.com/"><img src="images/Cook-Group.jpg" alt="Cook Logo"></a>
-                      </div>
-                      <div class="exp-content">
-                        <div class="exp-header">
-                          <span class="exp-company"><a href="https://www.cookmedical.com/">Cook Advanced Technologies</a></span>
-                          <span class="exp-date">May 2026 – Present</span>
-                        </div>
-                        <div class="exp-role">Engineering Intern, West Lafayette, IN</div>
-                        <div class="exp-detail">Managers: Sarah Robbins and <a href="https://www.linkedin.com/in/jesse-roll-41a47b18">Jesse Roll</a></div>
-                        <div class="exp-detail">Topic: Autonomous Point-of-Care Interventional Microbots </div>
-                      </div>
-                    </div>
-                    <div class="exp-entry">
-                      <div class="exp-logo">
-                        <a href="https://www.tesla.com//"><img src="images/Tesla_logo.png" alt="Tesla Logo"></a>
-                      </div>
-                      <div class="exp-content">
-                        <div class="exp-header">
-                          <span class="exp-company"><a href="https://www.tesla.com/">Tesla, Inc.</a></span>
-                          <span class="exp-date">Jan. 2023 – May 2023</span>
-                        </div>
-                        <div class="exp-role">Manufacturing Engineering Intern, Austin, TX</div>
-                        <div class="exp-detail">Manager: <a href="https://www.linkedin.com/in/chao-g-10612159/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3BdHCVuqRjTDexAXf3kKy63A%3D%3D/">Chao Gu</a> </div>
-                        <div class="exp-detail">Topic: Tesla Cybertruck Stamping Process Finalization</div>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  <tbody>
+    <tr>
+      <td style="padding:20px;width:100%;vertical-align:middle">
+        <h2>Experience</h2>
+
+        <div class="experience-list">
+
+          <div class="exp-entry">
+            <div class="exp-logo">
+              <a href="https://www.cookmedical.com/">
+                <img src="images/Cook-Group.jpg" alt="Cook Logo">
+              </a>
+            </div>
+
+            <div class="exp-content">
+              <div class="exp-header">
+                <span class="exp-company">
+                  <a href="https://www.cookmedical.com/">Cook Advanced Technologies</a>
+                </span>
+                <span class="exp-date">May 2026 – Present</span>
+              </div>
+
+              <div class="exp-role">Engineering Intern, West Lafayette, IN</div>
+
+              <div class="exp-detail">
+                Managers: Sarah Robbins and
+                <a href="https://www.linkedin.com/in/jesse-roll-41a47b18">Jesse Roll</a>
+              </div>
+
+              <div class="exp-detail">
+                Topic: Autonomous Point-of-Care Interventional Microbots
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-logo">
+              <a href="https://www.tesla.com/">
+                <img src="images/Tesla_logo.png" alt="Tesla Logo">
+              </a>
+            </div>
+
+            <div class="exp-content">
+              <div class="exp-header">
+                <span class="exp-company">
+                  <a href="https://www.tesla.com/">Tesla, Inc.</a>
+                </span>
+                <span class="exp-date">Jan. 2023 – May 2023</span>
+              </div>
+
+              <div class="exp-role">Manufacturing Engineering Intern, Austin, TX</div>
+
+              <div class="exp-detail">
+                Manager:
+                <a href="https://www.linkedin.com/in/chao-g-10612159/">Chao Gu</a>
+              </div>
+
+              <div class="exp-detail">
+                Topic: Tesla Cybertruck Stamping Process Finalization
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
