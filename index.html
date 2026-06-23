@@ -205,6 +205,56 @@
         color: #C28E0E;
       }
 
+
+      /* ===== Teaching section ===== */
+      .teaching-section {
+        font-size: 16px;
+        line-height: 1.35;
+      }
+
+      .teaching-school {
+        font-size: 17px;
+        font-weight: 500;
+        margin-top: 22px;
+        margin-bottom: 14px;
+      }
+
+      .teaching-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 20px;
+        align-items: start;
+        margin: 3px 0;
+      }
+
+      .teaching-course {
+        padding-left: 0;
+      }
+
+      .teaching-date {
+        color: #1772d0;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .teaching-subitem {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 20px;
+        align-items: start;
+        margin-left: 28px;
+        font-size: 15px;
+      }
+
+      .teaching-subitem .teaching-course::before {
+        content: "○ ";
+        color: #222;
+      }
+
+      .teaching-note {
+        color: #333;
+      }
+
       @media screen and (max-width: 700px) {
         .main-table {
           width: 100% !important;
@@ -227,6 +277,16 @@
 
         .project-text {
           padding-left: 16px !important;
+        }
+
+        .teaching-item,
+        .teaching-subitem {
+          grid-template-columns: 1fr;
+        }
+
+        .teaching-date {
+          text-align: left;
+          margin-left: 16px;
         }
       }
     </style>
@@ -482,15 +542,51 @@
               <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle">
                   <h2 id="teaching" class="section-anchor">Teaching</h2>
-                  <ul>
-                    <li><strong>ME 270-Basic Mechanics I</strong>, Teaching Assistant, Purdue, Spring 2026</li>
-                    <li><strong>ME 323-Mechanics of Materials</strong>, Teaching Assistant, Purdue, Fall 2024</li>
-                    <li><strong>AME 441aL-Senior Project Laboratory I</strong>, Lab Assistant, USC, Fall 2022</li>
-                    <li><strong>AME 341b-Mechoptronics Laboratory</strong>, Course Producer, USC, Spring 2022</li>
-                    <li><strong>VG 496-Professional Ethics</strong>, Teaching Assistant, SJTU, Summer 2021/Summer 2022</li>
-                    <li><strong>VM 250-Design and Manufacturing I</strong>, Teaching Assistant, SJTU, Spring 2021</li>
-                    <li><strong>VM 382-Mechanical Behavior of Material</strong>, Teaching Assistant, SJTU, Fall 2020</li>
-                  </ul>
+
+                  <div class="teaching-section">
+
+                    <div class="teaching-school">Purdue University</div>
+
+                    <div class="teaching-item">
+                      <div class="teaching-course">- ME 270 Basic Mechanics I</div>
+                      <div class="teaching-date">SP 26</div>
+                    </div>
+
+                    <div class="teaching-item">
+                      <div class="teaching-course">- ME 323 Mechanics of Materials</div>
+                      <div class="teaching-date">FA 24</div>
+                    </div>
+
+                    <div class="teaching-school">University of Southern California</div>
+
+                    <div class="teaching-item">
+                      <div class="teaching-course">- AME 441aL Senior Project Laboratory I</div>
+                      <div class="teaching-date">FA 22</div>
+                    </div>
+
+                    <div class="teaching-item">
+                      <div class="teaching-course">- AME 341b Mechoptronics Laboratory</div>
+                      <div class="teaching-date">SP 22</div>
+                    </div>
+
+                    <div class="teaching-school">Shanghai Jiao Tong University</div>
+
+                    <div class="teaching-item">
+                      <div class="teaching-course">- VG 496 Professional Ethics</div>
+                      <div class="teaching-date">SU 22, SU 21</div>
+                    </div>
+
+                    <div class="teaching-item">
+                      <div class="teaching-course">- VM 250 Design and Manufacturing I</div>
+                      <div class="teaching-date">SP 21</div>
+                    </div>
+
+                    <div class="teaching-item">
+                      <div class="teaching-course">- VM 382 Mechanical Behavior of Material</div>
+                      <div class="teaching-date">FA 20</div>
+                    </div>
+
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -531,22 +627,15 @@
   const sections = document.querySelectorAll(".section-anchor");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  function getSectionTop(section) {
-    return section.getBoundingClientRect().top + window.pageYOffset;
-  }
-
   function updateActiveNav() {
-    let currentSection = "about";
-    const scrollPosition = window.pageYOffset + 180;
+    let currentSection = "";
 
     sections.forEach(section => {
-      const sectionId = section.getAttribute("id");
-      if (!sectionId) return;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
 
-      const sectionTop = getSectionTop(section);
-
-      if (scrollPosition >= sectionTop) {
-        currentSection = sectionId;
+      if (window.scrollY >= sectionTop - 120) {
+        currentSection = section.getAttribute("id");
       }
     });
 
@@ -561,7 +650,6 @@
 
   window.addEventListener("scroll", updateActiveNav);
   window.addEventListener("load", updateActiveNav);
-  window.addEventListener("resize", updateActiveNav);
 </script>
   </body>
 </html>
