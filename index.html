@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
@@ -33,7 +34,7 @@
 .section-anchor {
   scroll-margin-top: 30px;
 }
-/* ===== Research card with multiple media items ===== */
+/* ===== Research card with GIF/image media items ===== */
 .research-card {
   display: flex;
   align-items: flex-start;
@@ -42,26 +43,47 @@
 }
 
 .research-media-column {
-  width: 36%;
-  min-width: 260px;
+  width: 34%;
+  min-width: 280px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
-.research-media-column img,
-.research-media-column video {
-  max-height: 160px;
+/* Use <img> for .gif, .png, .jpg files. This keeps GIF animation working. */
+.research-media-column img {
+  width: 100%;
+  height: auto;
+  max-height: 230px;
   object-fit: contain;
+  display: block;
+  border-radius: 8px;
 }
+
 .research-media-caption {
   font-size: 13px;
   color: #666;
-  margin-top: -6px;
+  margin-top: -4px;
   margin-bottom: 4px;
   text-align: center;
 }
 
 .research-content {
   flex: 1;
+  min-width: 0;
 }
+
+.research-card,
+.research-card * {
+  box-sizing: border-box;
+}
+
+.research-content {
+  min-width: 0;
+}
+
 
 .research-title {
   font-size: 20px;
@@ -110,6 +132,11 @@
   .research-media-column {
     width: 100%;
     min-width: 100%;
+    max-width: 100%;
+  }
+
+  .research-media-column img {
+    max-height: 260px;
   }
 }
 
@@ -491,10 +518,7 @@
 
            <div class="research-card">
            <div class="research-media-column">
-             <video autoplay muted loop playsinline poster="images/magprint.jpg">
-               <source src="videos/magprint.mp4" type="video/mp4">
-               Your browser does not support the video tag.
-             </video>
+             <img src="images/magprint.gif" alt="Embedded-magnet microrobot fabrication and actuation">
            </div>
 
           <div class="research-content">
@@ -520,13 +544,8 @@
              
            <div class="research-card">
            <div class="research-media-column">
-             <video autoplay muted loop playsinline poster="images/thermal.png">
-               <source src="images/thermal.png" type="video/mp4">
-               Your browser does not support the video tag.
-             </video>
-             <video autoplay muted loop playsinline>
-              <source src="images/thermal.gif" type="video/mp4">
-              </video>
+             <img src="images/thermal.png" alt="2PP-based mold-assisted fabrication schematic">
+             <img src="images/thermal.gif" alt="Thermal-responsive helical adaptive microswimmer">
            </div>
 
           <div class="research-content">
@@ -556,10 +575,7 @@
 
            <div class="research-card">
            <div class="research-media-column">
-             <video autoplay muted loop playsinline poster="images/magprint.gif">
-               <source src="videos/magprint.gif" type="video/mp4">
-               Your browser does not support the video tag.
-             </video>
+             <img src="images/magprint.gif" alt="MagPrint embedded-magnet microrobot demonstration">
            </div>
 
           <div class="research-content">
@@ -586,13 +602,8 @@
 
         <div class="research-card">
            <div class="research-media-column">
-             <video autoplay muted loop playsinline poster="images/control.png">
-               <source src="images/control.png" type="video/mp4">
-          
-             </video>
-             <video autoplay muted loop playsinline>
-              <source src="images/control.gif" type="video/mp4">
-              </video>
+             <img src="images/control.png" alt="Research media">
+             <img src="images/control.gif" alt="Research media">
            </div>
 
           <div class="research-content">
@@ -619,22 +630,17 @@
               The architecture combines an Arduino-controlled magnetic actuation system, a 6-DOF robotic manipulator with force sensing, an ultrasound imaging system, and an Xbox controller as a unified user interface. 
               The controller enables simultaneous operation of both subsystems, 
               where discrete inputs are used for magnetic actuation and analog inputs are used for robotic arm control. This dual-input design allows coordinated manipulation of both the microrobot and the imaging probe in real time.
-
-
+            </div>
           </div>
         </div>
 
-
-              <p>
-                     Before starting my Ph.D., I gained experience in <strong><span class="highlight">robotic arm control</span></strong> and <strong><span class="highlight">mechanical design</span></strong>, 
-                which laid the foundation for my current research in magnetic microrobotics and biomedical robotic systems.
-                    </p>
+        <p>
+          Before starting my Ph.D., I gained experience in <strong><span class="highlight">robotic arm control</span></strong> and <strong><span class="highlight">mechanical design</span></strong>, 
+          which laid the foundation for my current research in magnetic microrobotics and biomedical robotic systems.
+        </p>
            <div class="research-card">
            <div class="research-media-column">
-             <video autoplay muted loop playsinline poster="images/sensor-based.png">
-               <source src="videos/sensor-based.png" type="video/mp4">
-               Your browser does not support the video tag.
-             </video>
+             <img src="images/sensor-based.png" alt="Sensor-based planning and control for conformal deposition">
            </div>
 
           <div class="research-content">
@@ -662,10 +668,7 @@
              
            <div class="research-card">
            <div class="research-media-column">
-             <video autoplay muted loop playsinline poster="images/drones.gif">
-               <source src="images/drones.gif" type="video/mp4">
-               Your browser does not support the video tag.
-             </video>
+             <img src="images/drones.gif" alt="UAV design and navigation project">
            </div>
 
           <div class="research-content">
@@ -678,13 +681,14 @@
               I worked with Prof. <a href="https://drone.sjtu.edu.cn/dpzou/" target="_blank">Danping Zou</a> on the mechanical design of unmanned aerial vehicles (UAV) with application-specific functional requirements. 
               I used SolidWorks to design the UAV structure and coordinated with manufacturers to discuss fabrication details and production feasibility. 
               The resulting UAV model was later widely used in <a href="https://scholar.google.com/citations?user=y6FsLDQAAAAJ&hl=en&oi=ao" target="_blank">his research work</a>.
-
             </div>
-
           </div>
         </div>
 
-
+           </td>
+          </tr>
+         </tbody>
+        </table>
 
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
   <tbody>
