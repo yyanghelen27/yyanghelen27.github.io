@@ -25,6 +25,61 @@
         text-decoration: none;
       }
 
+      html {
+  scroll-behavior: smooth;
+}
+
+.section-anchor {
+  scroll-margin-top: 30px;
+}
+
+/* Side navigation bar */
+.side-nav {
+  position: fixed;
+  top: 50%;
+  left: 28px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+  padding: 14px 12px;
+  border-left: 2px solid #e5e5e5;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+}
+
+/* Normal section links */
+.side-nav a {
+  font-size: 14px;
+  color: #777;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.side-nav a:hover {
+  color: #1772d0;
+  background-color: #f2f7ff;
+}
+
+/* Highlighted current section */
+.side-nav a.active {
+  color: #1772d0;
+  font-weight: 600;
+  background-color: #eaf3ff;
+}
+
+/* Hide sidebar on small screens */
+@media screen and (max-width: 1100px) {
+  .side-nav {
+    display: none;
+  }
+}
+      
       a:hover {
         color: #f09228;
         text-decoration: underline;
@@ -177,13 +232,23 @@
   </head>
 
   <body>
+    <nav class="side-nav">
+    <a href="#about" class="nav-link active">About</a>
+    <a href="#news" class="nav-link">News</a>
+    <a href="#research" class="nav-link">Research</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#awards" class="nav-link">Awards</a>
+    <a href="#service" class="nav-link">Service</a>
+      <a href="#teaching" class="nav-link">Teaching</a>
+      <a href="#moments" class="nav-link">Moments</a>
+    </nav>
     <table class="main-table" style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
         <tr style="padding:0px">
           <td style="padding:0px">
 
             <!-- Header / About -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+           <table id="about" class="section-anchor" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
                 <tr style="padding:0px">
                   <td style="padding:2.5%;width:63%;vertical-align:middle">
@@ -246,7 +311,7 @@
             <tbody>
               <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>News</h2>
+                  <h2 id="news" class="section-anchor">News</h2>
                   <div style="max-height:200px; overflow-y:auto;">
                     <ul class="news-list">
                       <li><span class="news-date">[May 2026]</span>Started Engineering Intern position at Cook Advanced Technologies.</li>
@@ -262,7 +327,7 @@
               <tbody>
                 <tr>
                   <td style="padding:16px;width:100%;vertical-align:middle">
-                    <h2>Research during Ph.D.</h2>
+                    <h2 id="research" class="section-anchor">Research</h2>
                     <p>
                       My Ph.D. research focuses on
                       <strong><span class="highlight">magnetic actuated microrobots</span></strong>.
@@ -313,7 +378,7 @@
   <tbody>
     <tr>
       <td style="padding:20px;width:100%;vertical-align:middle">
-        <h2>Experience</h2>
+        <h2 id="experience" class="section-anchor">Experience</h2>
 
         <div class="experience-list">
 
@@ -383,7 +448,7 @@
             <tbody>
               <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Awards</h2>
+                  <h2 id="awards" class="section-anchor">Awards</h2>
                   <ul>
                     <li><strong>Winkelman Fellowship</strong>, Purdue University, 2023</li>
                     <li><strong>Outstanding Graduates Award</strong>, Shanghai Jiao Tong University, 2022</li>
@@ -398,7 +463,7 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Services</h2>
+                  <h2 id="service" class="section-anchor">Services</h2>
                   <ul>
                     <li><strong>Reviewer</strong>, IEEE Transactions on Robotics <strong>(T-RO)</strong></li>
                     <li><strong>Reviewer</strong>, Nonlinear Dynamics</li>
@@ -415,7 +480,7 @@
             <tbody>
               <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Teaching</h2>
+                  <h2 id="teaching" class="section-anchor">Teaching</h2>
                   <ul>
                     <li><strong>ME 270-Basic Mechanics I</strong>, Teaching Assistant, Purdue, Spring 2026</li>
                     <li><strong>ME 323-Mechanics of Materials</strong>, Teaching Assistant, Purdue, Fall 2024</li>
@@ -448,5 +513,33 @@
         </tr>
       </tbody>
     </table>
+    <script>
+  const sections = document.querySelectorAll(".section-anchor");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function updateActiveNav() {
+    let currentSection = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (window.scrollY >= sectionTop - 120) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+
+      if (link.getAttribute("href") === "#" + currentSection) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav);
+  window.addEventListener("load", updateActiveNav);
+</script>
   </body>
 </html>
