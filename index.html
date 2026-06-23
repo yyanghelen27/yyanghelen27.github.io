@@ -1,37 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yang Yang</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #222;
+      background-color: #ffffff;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .links a {
+      margin-right: 15px;
+    }
+
+    .project {
+      margin-bottom: 25px;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @media screen and (max-width: 700px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Yang Yang</h1>
 
+  <div class="header">
+    <img src="assets/profile.jpg" alt="Yang Yang" class="profile-img">
+
+    <div>
+      <h1>Yang Yang</h1>
+      <p class="subtitle">
+        Ph.D. Student in Mechanical Engineering<br>
+        Purdue University
+      </p>
+
+      <p class="links">
+        <a href="mailto:yyanghelen27@gmail.com">Email</a>
+        <a href="#">Google Scholar</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">CV</a>
+      </p>
+    </div>
+  </div>
+
+  <h2>About Me</h2>
   <p>
-    Ph.D. Student in Mechanical Engineering<br>
-    Purdue University
+    I am a Ph.D. student in the School of Mechanical Engineering at Purdue University,
+    working on magnetic microrobots, two-photon polymerization, ultrasound-guided robotic
+    systems, and biomedical applications.
   </p>
 
   <p>
-    I am a Ph.D. student in the School of Mechanical Engineering at Purdue University.
-    My research focuses on magnetic microrobots, two-photon polymerization,
-    ultrasound-guided robotic systems, and biomedical applications.
+    My research focuses on developing magnetically actuated microrobots and image-guided
+    robotic systems for minimally invasive diagnosis and therapy.
   </p>
 
   <h2>Research Interests</h2>
   <ul>
     <li>Magnetic microrobotics</li>
-    <li>Two-photon polymerization</li>
+    <li>Two-photon polymerization microfabrication</li>
+    <li>Embedded-magnet microrobots</li>
     <li>Medical robotics</li>
-    <li>Ultrasound-guided intervention</li>
+    <li>Ultrasound-guided magnetic navigation</li>
     <li>Targeted drug delivery</li>
   </ul>
 
+  <h2>Research Projects</h2>
+
+  <div class="project">
+    <h3>Direct-Printed Embedded-Magnet Microrobots</h3>
+    <p>
+      This project develops a direct-printing strategy for integrating permanent micro-magnets
+      into two-photon polymerized microrobots. The approach enables magnetic microswimmers,
+      tumblers, and grippers with embedded magnetic components.
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>Hyper-Redundant Magnetic Snake Microrobots</h3>
+    <p>
+      This project explores modular snake-like microrobots for navigation in constrained
+      biological environments. The design combines magnetic actuation with flexible or
+      articulated microstructures.
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>Ultrasound-Guided Magnetic Navigation</h3>
+    <p>
+      This project focuses on robotic and ultrasound-guided navigation of magnetic microrobots
+      for biomedical intervention and real-time tracking.
+    </p>
+  </div>
+
   <h2>Publications</h2>
-  <p>Coming soon.</p>
+
+  <p>
+    <strong>Yang Yang</strong>, L. Tan, L. Fang, and D. J. Cappelleri,
+    “Shape-Programmable Adaptive Multi-Material Microswimmers for Biomedical Applications,”
+    <em>Advanced Functional Materials</em>, 2024.
+  </p>
+
+  <p>
+    <strong>Yang Yang</strong> et al.,
+    “Sensor-based planning and control for conformal deposition on a deformable surface
+    using an articulated industrial robot,”
+    <em>Journal of Manufacturing Science and Engineering</em>, 2024.
+  </p>
+
+  <h2>Education</h2>
+  <p>
+    <strong>Purdue University</strong><br>
+    Ph.D. Student, Mechanical Engineering
+  </p>
 
   <h2>Contact</h2>
-  <p>Email: yyanghelen27@gmail.com</p>
+  <p>
+    Email: <a href="mailto:yyanghelen27@gmail.com">yyanghelen27@gmail.com</a>
+  </p>
+
+  <div class="footer">
+    Last updated: 2026
+  </div>
+
 </body>
 </html>
