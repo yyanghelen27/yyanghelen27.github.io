@@ -140,17 +140,30 @@
   }
 }
 
+/* Prevent the carousel from stretching the whole page */
+body {
+  overflow-x: hidden;
+}
+
+.main-table {
+  width: 100% !important;
+  max-width: 850px !important;
+  table-layout: fixed;
+}
+
 /* ===== Moments auto-scrolling photo row with captions ===== */
 .moments-section {
-  overflow: hidden;
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   margin-top: 16px;
   position: relative;
 }
 
 .moments-track {
   display: flex;
-  gap: 18px;
+  flex-wrap: nowrap;
+  gap: 16px;
   width: max-content;
   animation: scrollMoments 45s linear infinite;
 }
@@ -160,36 +173,36 @@
 }
 
 .moment-card {
-  flex: 0 0 auto;
-  width: 220px;
-  border-radius: 14px;
+  flex: 0 0 190px;
+  width: 190px;
+  border-radius: 12px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
 }
 
 .moment-card img {
   width: 100%;
-  height: 150px;
+  height: 125px;
   object-fit: cover;
   display: block;
 }
 
 .moment-caption {
-  font-size: 13px;
+  font-size: 12px;
   color: #555;
   text-align: center;
-  padding: 8px 10px 10px 10px;
+  padding: 7px 8px 9px 8px;
   background: #fff;
 }
 
-/* Fade effect on left and right edges */
+/* Soft fade on both sides */
 .moments-section::before,
 .moments-section::after {
   content: "";
   position: absolute;
   top: 0;
-  width: 60px;
+  width: 45px;
   height: 100%;
   z-index: 2;
   pointer-events: none;
@@ -205,7 +218,6 @@
   background: linear-gradient(to left, #fff, transparent);
 }
 
-/* Rolling direction: right to left */
 @keyframes scrollMoments {
   from {
     transform: translateX(0);
@@ -217,11 +229,12 @@
 
 @media screen and (max-width: 700px) {
   .moment-card {
-    width: 180px;
+    flex: 0 0 160px;
+    width: 160px;
   }
 
   .moment-card img {
-    height: 125px;
+    height: 105px;
   }
 
   .moments-track {
@@ -1000,10 +1013,10 @@
             </tbody>
           </table>
 
-         <table id="moments" class="section-anchor" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+         <table id="moments" class="section-anchor" style="width:100%;table-layout:fixed;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
   <tbody>
     <tr>
-      <td style="padding:20px;width:100%;vertical-align:middle">
+      <td style="padding:20px;width:100%;vertical-align:middle;overflow:hidden;">
         <h2>Moments</h2>
         <p>
           Outside the lab, I enjoy traveling, exploring new places, and capturing moments from daily life.
